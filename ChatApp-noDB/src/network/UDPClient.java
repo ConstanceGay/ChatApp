@@ -19,6 +19,7 @@ public class UDPClient{
 			socket.connect(InetAddress.getByName("8.8.8.8"),10002);
 			this.localAddr = socket.getLocalAddress();
 			socket.close();
+			this.socket= new DatagramSocket();
 			NetworkInterface ni=NetworkInterface.getByInetAddress(localAddr);
 			for (int i =0; i<ni.getInterfaceAddresses().size();i++) {
 				if(ni.getInterfaceAddresses().get(i).getBroadcast() != null) {
