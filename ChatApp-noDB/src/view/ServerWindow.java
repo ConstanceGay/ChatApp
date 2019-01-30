@@ -31,7 +31,7 @@ public class ServerWindow extends Window {
     private void $$$setupUI$$$() {
     	this.setTitle("Distant Server");
     	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-    	int width = (int) (gd.getDisplayMode().getWidth() * 0.2);
+    	int width = (int) (gd.getDisplayMode().getWidth() * 0.3);
     	//int height = (int) (gd.getDisplayMode().getHeight() * 0.2);
     	
     	//int width = 700;

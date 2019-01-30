@@ -15,8 +15,11 @@ public class UDPClient{
 	
 	public UDPClient () {
 		//connect to a socket in order to retrieve local address
-		try {
-			this.localAddr = InetAddress.getLocalHost();
+		try (final DatagramSocket socket = new DatagramSocket()){
+			socket.setBroadcast(true);
+			socket.connect(InetAddress.getByName("8.8.8.8"),10002);
+			this.localAddr = socket.getLocalAddress();
+			socket.close();
 			this.socket= new DatagramSocket();
 			//on recupere l'adresse de broadcast
 			NetworkInterface ni=NetworkInterface.getByInetAddress(localAddr);

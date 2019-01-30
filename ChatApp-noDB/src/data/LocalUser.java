@@ -11,14 +11,6 @@ public class LocalUser {
 	
 	public LocalUser(String pseudo) {
 		//finds the local IPaddress
-		/*
-		try {
-			InetAddress address = InetAddress.getLocalHost();
-			this.Client=new User(pseudo,address);
-		} catch (UnknownHostException e) {
-			System.out.println("No Internet");
-		}
-		*/
 		try (final DatagramSocket socket = new DatagramSocket()){
 			socket.setBroadcast(true);
 			socket.connect(InetAddress.getByName("8.8.8.8"),10002);
